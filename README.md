@@ -14,7 +14,7 @@ N009 ---> N019[HTML] & N020[CSS] & N021[Javascript] & N022[React]
 
 N019 --> N023[Is HTML valid?] --> N024[Are tags closed? Do they need to be?] & N025[Valid tag nesting?] & N026[Attributes with double-quotes?] & N027[Are attribute values valid?] --> N028[VS Code squiggles/Problems view]
 
-N019 --> N029[Is the intended element being usd?] & N030[Intended attributes/values?] --> N031( ) --> N032[VS Code] & N033[Browser: elements inspector]
+N019 --> N029[Is the intended element being usefd?] & N030[Intended attributes/values?] --> N031( ) --> N032[VS Code] & N033[Browser: elements inspector]
 
 N020 --> N034[Valid property names/values?] --> N035[VS Code squiggles/Problems view]
 
@@ -52,8 +52,29 @@ N010 --> N076[Did the request have a payload? Was it supposed to?] --> N077[Does
 
 N010 --> N078[Missing CORS headers?]
 
-N010 --> N079[Is a token/authorization required?]
+N074 & N075 & N077 & N078 --> N079[Browser: Network inspector]
 
-%%N010 --> N014[Was the request sent?] & N015[What HTTP method?] & N016[Did the request have a payload? Was it supposed to?] & N017[Missing CORS headers?] & N018[Is a token/authorization required?]
+N010 --> N080[Is a token/authorization required?] --> N081[Was the token sent?] & N082[Is it valid?] & N083[Does it contain the right info?]
 
+N081 --> N079
+
+N082 & N083 --> N084[https://jwt.io/]
+
+N011 --> N085[Not responding] --> N086[What URL is being handled?] & N087[What HTTP method?] --> N088[Browser: Network inspector]
+
+N085 --> N089[Is CORS configured properly?]
+
+N085 --> N090[Is there a defined endpoint?] --> N091[Is the endpoint reached?] & N092[Is there middleware before the endpoint?] --> N093[ ] --> N094[console.log in endpoint/middleware] & N095[VS Code: NodeJS debugger]
+
+N011 --> N096[Runtime error] --> N097[What is the error?] & N098[In which source file is the error happening?] --> N099[ ] --> N100[try/catch + console.log] & N095[VS Code: NodeJS debugger]
+
+N096 --> N102[What led up to the error?] --> N095
+
+N011 --> N103[Unexpected behavior] --> N095
+
+N012 --> N104[Did the request return?] & N105[What HTTP code came back?] & N106[Was there a response payload? Should there have been?]
+
+N106 --> N107[Does the payload shape match the expected shape?]
+
+N104 & N105 & N107 --> N108[ ] --> N109[Browser: Network inspector] & N110[Postman] & N111[VS Code: REST client extension]
 ```
