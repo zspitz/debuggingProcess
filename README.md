@@ -5,10 +5,12 @@
 ## בכתיבת הקוד
 ```mermaid
 graph LR
-Start --> N001[Is this a syntax error?]
+Start((Start)) --> N001[Is this a syntax error?]
 Start --> N002[Typescript] --> N003[Type error?] & N004[Missing NPM package?]
 N001 & N003 & N004 --> N005( )
 N005 --> N006[Squiggles/Problems view] & N007[Terminal output]
+
+style Start fill:#c91831
 ```
 
 ## בהפעלת הקוד
@@ -17,7 +19,7 @@ N005 --> N006[Squiggles/Problems view] & N007[Terminal output]
 
 ```mermaid
 graph LR
-N019[HTML] & N020[CSS] & N021[Javascript] & N022[React]
+N019[HTML]:::tech & N020[CSS]:::tech & N021[Javascript]:::tech & N022[React]:::tech
 
 N019 --> N023[Is HTML valid?] --> N024[Are tags closed? Do they need to be?] & N025[Valid tag nesting?] & N026[Attributes with double-quotes?] & N027[Are attribute values valid?] --> N028[VS Code squiggles/Problems view]
 
@@ -50,53 +52,61 @@ N022 --> N068[React Router] --> N069[No matching route?] --> N070[Browser: Conso
 N068 --> N071[Route parameters specified in both route definition and address?]
 
 N068 --> N072[Child routes?] --> N073[Is Outlet properly placed?]
+
+classDef tech fill:#203d7e
 ```
 
 ### בקשה מצד לקוח לצד שרת
 
 ```mermaid
 graph LR
-N010[Start] --> N074[Was the request sent?]
+Start((Start)) --> N074[Was the request sent?]
 
-N010 --> N075[What HTTP method?]
+Start --> N075[What HTTP method?]
 
-N010 --> N076[Did the request have a payload? Was it supposed to?] --> N077[Does the payload fit the server's expectation?]
+Start --> N076[Did the request have a payload? Was it supposed to?] --> N077[Does the payload fit the server's expectation?]
 
-N010 --> N078[Missing CORS headers?]
+Start --> N078[Missing CORS headers?]
 
 N074 & N075 & N077 & N078 --> N079[Browser: Network inspector]
 
-N010 --> N080[Is a token/authorization required?] --> N081[Was the token sent?] & N082[Is it valid?] & N083[Does it contain the right info?]
+Start --> N080[Is a token/authorization required?] --> N081[Was the token sent?] & N082[Is it valid?] & N083[Does it contain the right info?]
 
 N081 --> N079
 
 N082 & N083 --> N084[https://jwt.io]
+
+style Start fill:#c91831
 ```
 
 ### צד שרת
 
 ```mermaid
 graph LR
-N011[Start] --> N085[Not responding] --> N086[What URL is being handled?] & N087[What HTTP method?] --> N088[Browser: Network inspector]
+Start((Start)) --> N085[Not responding] --> N086[What URL is being handled?] & N087[What HTTP method?] --> N088[Browser: Network inspector]
 
 N085 --> N089[Is CORS configured properly?]
 
 N085 --> N090[Is there a defined endpoint?] --> N091[Is the endpoint reached?] & N092[Is there middleware before the endpoint?] --> N093[ ] --> N094[console.log in endpoint/middleware] & N095[VS Code: NodeJS debugger]
 
-N011 --> N096[Runtime error] --> N097[What is the error?] & N098[In which source file is the error happening?] --> N099[ ] --> N100[try/catch + console.log] & N095[VS Code: NodeJS debugger]
+Start --> N096[Runtime error] --> N097[What is the error?] & N098[In which source file is the error happening?] --> N099[ ] --> N104[Terminal output] & N100[try/catch + console.log] & N095[VS Code: NodeJS debugger]
 
 N096 --> N102[What led up to the error?] --> N095
 
-N011 --> N103[Unexpected behavior] --> N095
+Start --> N103[Unexpected behavior] --> N095
+
+style Start fill:#c91831
 ```
 
 ### תגובת שרת ללקוח
 
 ```mermaid
 graph LR
-Start --> N104[Did the request return?] & N105[What HTTP code came back?] & N106[Was there a response payload? Should there have been?]
+Start((Start)) --> N104[Did the request return?] & N105[What HTTP code came back?] & N106[Was there a response payload? Should there have been?]
 
 N106 --> N107[Does the payload shape match the expected shape?]
 
 N104 & N105 & N107 --> N108[ ] --> N109[Browser: Network inspector] & N110[Postman] & N111[VS Code: REST client extension]
+
+style Start fill:#c91831
 ```
