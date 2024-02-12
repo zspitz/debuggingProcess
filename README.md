@@ -11,6 +11,7 @@ N001 & N003 & N004 --> N005( )
 N005 --> N006[Squiggles/Problems view] & N007[Terminal output]
 
 style Start fill:#c91831
+style N002 fill:#203d7e
 ```
 
 ## בהפעלת הקוד
@@ -21,19 +22,19 @@ style Start fill:#c91831
 graph LR
 N019[HTML] & N020[CSS] & N021[Javascript] & N022[React]
 
-N019 --> N023[Is HTML valid?] --> N024[Are tags closed? Do they need to be?] & N025[Valid tag nesting?] & N026[Attributes with double-quotes?] & N027[Are attribute values valid?] --> N028[VS Code squiggles/Problems view]
+N019 --> N023[Is HTML valid?] --> N024[Are tags closed? Do they need to be?] & N025[Valid tag nesting?] & N026[Attributes with double-quotes?] & N027[Are attribute values valid?] --> N028[Squiggles/Problems view]
 
-N019 --> N029[Is the intended element being usefd?] & N030[Intended attributes/values?] --> N031( ) --> N032[Source files] & N033[Browser: elements inspector]
+N019 --> N029[Is the intended element being usefd?] & N030[Intended attributes/values?] --> N031( ) --> N032[Source files] & N033[Elements inspector]
 
-N020 --> N034[Valid property names/values?] --> N035[VS Code squiggles/Problems view]
+N020 --> N034[Valid property names/values?] --> N028
 
-N034 --> N036[Browser] --> N037[Console] & N038[Browser: Style inspector]
+N034 --> N037[Browser: Console] & N038[Style inspector]
 
 N020 --> N039[Style rules that have no effect?] --> N040[Rule doesn't include element] & N041[Overridden by other rules?] --> N038
 
-N020 --> N043[Properties that have no effect?] --> N044[Browser: Style inspector warnings]
+N020 --> N043[Properties that have no effect?] --> N044[Style inspector warnings]
 
-N021 --> N045[Runtime error?] --> N046[What is the error?] & N047[In which source file?] --> N048[Browser console]
+N021 --> N045[Runtime error?] --> N046[What is the error?] & N047[In which source file?] --> N037
 
 N045 --> N049[What led up to the error?] --> N051[Browser: Console stack trace] & N050[Client-side debugger]
 
@@ -57,6 +58,7 @@ style N019 fill:#203d7e
 style N020 fill:#203d7e
 style N021 fill:#203d7e
 style N022 fill:#203d7e
+style N068 fill:#203d7e
 ```
 
 ### בקשה מצד לקוח לצד שרת
@@ -71,7 +73,7 @@ Start --> N076[Did the request have a payload? Was it supposed to?] --> N077[Doe
 
 Start --> N078[Missing CORS headers?]
 
-N074 & N075 & N077 & N078 --> N079[Browser: Network inspector]
+N074 & N075 & N077 & N078 --> N079[Network inspector]
 
 Start --> N080[Is a token/authorization required?] --> N081[Was the token sent?] & N082[Is it valid?] & N083[Does it contain the right info?]
 
@@ -86,13 +88,13 @@ style Start fill:#c91831
 
 ```mermaid
 graph LR
-Start((Start)) --> N085[Not responding] --> N086[What URL is being handled?] & N087[What HTTP method?] --> N088[Browser: Network inspector]
+Start((Start)) --> N085[Not responding] --> N086[What URL is being handled?] & N087[What HTTP method?] --> N088[Network inspector]
 
 N085 --> N089[Is CORS configured properly?]
 
 N085 --> N090[Is there a defined endpoint?] --> N091[Is the endpoint reached?] & N092[Is there middleware before the endpoint?] --> N093[ ] --> N094[console.log in endpoint/middleware] & N095[VS Code: NodeJS debugger]
 
-Start --> N096[Runtime error] --> N097[What is the error?] & N098[In which source file is the error happening?] --> N099[ ] --> N104[Terminal output] & N100[try/catch + console.log] & N095[VS Code: NodeJS debugger]
+Start --> N096[Runtime error] --> N097[What is the error?] & N098[In which source file is the error happening?] --> N099[ ] --> N104[Terminal output] & N100[try/catch + console.log] & N095[Server-side debugger]
 
 N096 --> N102[What led up to the error?] --> N095
 
@@ -109,7 +111,7 @@ Start((Start)) --> N104[Did the request return?] & N105[What HTTP code came back
 
 N106 --> N107[Does the payload shape match the expected shape?]
 
-N104 & N105 & N107 --> N108[ ] --> N109[Browser: Network inspector] & N110[Postman] & N111[VS Code: REST client extension]
+N104 & N105 & N107 --> N108[ ] --> N109[Network inspector] & N110[Postman] & N111[VS Code: REST client extension]
 
 style Start fill:#c91831
 ```
