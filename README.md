@@ -19,7 +19,7 @@ style Start fill:#c91831
 
 ```mermaid
 graph LR
-N019[HTML]:::tech & N020[CSS]:::tech & N021[Javascript]:::tech & N022[React]:::tech
+N019[HTML] & N020[CSS] & N021[Javascript] & N022[React]
 
 N019 --> N023[Is HTML valid?] --> N024[Are tags closed? Do they need to be?] & N025[Valid tag nesting?] & N026[Attributes with double-quotes?] & N027[Are attribute values valid?] --> N028[VS Code squiggles/Problems view]
 
@@ -53,7 +53,10 @@ N068 --> N071[Route parameters specified in both route definition and address?]
 
 N068 --> N072[Child routes?] --> N073[Is Outlet properly placed?]
 
-classDef tech fill:#203d7e
+style N019 fill:#203d7e
+style N020 fill:#203d7e
+style N021 fill:#203d7e
+style N022 fill:#203d7e
 ```
 
 ### בקשה מצד לקוח לצד שרת
