@@ -70,7 +70,7 @@ N010 --> N080[Is a token/authorization required?] --> N081[Was the token sent?] 
 
 N081 --> N079
 
-N082 & N083 --> N084[https://jwt.io/]
+N082 & N083 --> N084[https://jwt.io]
 ```
 
 ### צד שרת
