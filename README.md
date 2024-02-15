@@ -5,15 +5,16 @@
 ## בכתיבת הקוד
 ```mermaid
 graph LR
-Start((Start)) --> N001[Is this a syntax error?]
+Start((Start)) --> N001[Syntax error?]
 Start --> N002[Typescript] --> N003[Type error?] & N004[Missing NPM package?]
 N001 & N003 & N004 --> N005( )
-N005 --> N006([Editor: Squiggles/Problems view]) & N007([Terminal output])
+N005 --> N006([Editor: Squiggles/Problems view])
 
 style Start fill:#c91831
 style N002 fill:#203d7e
 style N006 fill:#1b5f58
-style N007 fill:#1b5f58
+
+click N006 "./tools/code-editor.md"
 ```
 
 ## בהפעלת הקוד
