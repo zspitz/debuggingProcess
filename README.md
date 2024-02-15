@@ -78,6 +78,7 @@ style N064 fill:#1b5f58
 style N065 fill:#1b5f58
 style N070 fill:#1b5f58
 
+click N028 "https://github.com/zspitz/debuggingProcess/blob/main/tools/code-editor.md"
 ```
 
 ### בקשה מצד לקוח לצד שרת
@@ -103,6 +104,8 @@ N082 & N083 --> N084([https://jwt.io])
 style Start fill:#c91831
 style N079 fill:#1b5f58
 style N084 fill:#1b5f58
+
+click N084 "https://jwt.io"
 ```
 
 ### צד שרת
