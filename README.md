@@ -15,7 +15,7 @@ style N002 fill:#203d7e
 style N006 fill:#1b5f58
 
 click N006 "https://github.com/zspitz/debuggingProcess/blob/main/tools/code-editor.md"
-click N002 "https://github.com/zspitz/debuggingProcess/blob/main/tools/code-editor.md#typescript"
+click N002 "https://github.com/zspitz/debuggingProcess/blob/main/tools/code-editor.md#%D7%A9%D7%A4%D7%AA-typescript"
 ```
 
 ## בהפעלת הקוד
