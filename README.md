@@ -14,7 +14,7 @@ style Start fill:#c91831
 style N002 fill:#203d7e
 style N006 fill:#1b5f58
 
-click N006 "./tools/code-editor.md"
+click N006 "https://github.com/zspitz/debuggingProcess/blob/main/tools/code-editor.md"
 ```
 
 ## בהפעלת הקוד
