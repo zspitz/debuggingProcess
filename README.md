@@ -116,7 +116,9 @@ Start((Start)) --> N085[Not responding] --> N086[What URL is being handled?] & N
 
 N085 --> N089[Is CORS configured properly?]
 
-N085 --> N090[Is there a defined endpoint?] --> N091[Is the endpoint reached?] & N092[Is there middleware before the endpoint?] --> N093[ ] --> N094([console.log in endpoint/middleware]) & N095([Server-side debugger])
+N085 --> N090[Is there a defined endpoint?] -->  N105([Install & use a route-listing package])
+
+N090 --> N091[Is the endpoint reached?] & N092[Is there middleware before the endpoint?] --> N093[ ] --> N094([console.log in endpoint/middleware]) & N095([Server-side debugger])
 
 Start --> N096[Runtime error] --> N097[What is the error?] & N098[In which source file is the error happening?] --> N099[ ] --> N104([Terminal output]) & N100([try/catch + console.log]) & N095
 
@@ -130,6 +132,7 @@ style N094 fill:#1b5f58
 style N095 fill:#1b5f58
 style N104 fill:#1b5f58
 style N100 fill:#1b5f58
+style N105 fill:#1b5f58
 
 ```
 
