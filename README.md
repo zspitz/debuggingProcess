@@ -89,7 +89,7 @@ Start((Start)) --> N074[Was the request sent?]
 
 Start --> N075[What HTTP method?]
 
-Start --> N076[Did the request have a payload? Was it supposed to?] --> N077[Does the payload fit the server's expectation?]
+Start --> N076[Did the request have a payload?\nWas it supposed to?] --> N077[Does the payload fit the server's expectation?]
 
 Start --> N078[Missing CORS headers?]
 
@@ -116,15 +116,17 @@ Start((Start)) --> N085[Not responding] --> N086[What URL is being handled?] & N
 
 N085 --> N089[Is CORS configured properly?]
 
-N085 --> N090[Is there a defined endpoint?] -->  N105([Install & use a route-listing package])
-
 N090 --> N091[Is the endpoint reached?] & N092[Is there middleware before the endpoint?] --> N093[ ] --> N094([console.log in endpoint/middleware]) & N095([Server-side debugger])
 
-Start --> N096[Runtime error] --> N097[What is the error?] & N098[In which source file is the error happening?] --> N099[ ] --> N104([Terminal output]) & N100([try/catch + console.log]) & N095
+N085 --> N090[Is there a defined endpoint?] -->  N105([Install & use a route-listing package])
 
-N096 --> N102[What led up to the error?] --> N095
+Start --> N096 --> N102[What led up to the error?] --> N095
 
 Start --> N103[Unexpected behavior] --> N095
+
+N096[Runtime error] --> N097[What is the error?] & N098[In which source file is the error happening?] --> N099[ ] --> N104([Terminal output]) & N100([try/catch + console.log]) & N095
+
+N103 --> N106[Wrong endpoint?\ne.g. variables vs static path] --> N105
 
 style Start fill:#c91831
 style N088 fill:#1b5f58
