@@ -89,7 +89,7 @@ Start((Start)) --> N074[Was the request sent?]
 
 Start --> N075[What HTTP method?]
 
-Start --> N076[Did the request have a payload?\nWas it supposed to?] --> N077[Does the payload fit the server's expectation?]
+Start --> N076[Did the request have a payload? Was it supposed to?] --> N077[Does the payload fit the server's expectation?]
 
 Start --> N078[Missing CORS headers?]
 
@@ -99,7 +99,7 @@ Start --> N080[Is a token/authorization required?] --> N081[Was the token sent?]
 
 N081 --> N079
 
-N082 & N083 --> N084([https://jwt.io])
+N082 & N083 --> N084([jwt.io])
 
 style Start fill:#c91831
 style N079 fill:#1b5f58
